@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/workspace-oman/**)",
+      "WebFetch(domain:afren.co)"
+    ]
+  }
+}
