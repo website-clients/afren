@@ -343,6 +343,59 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 #back-top:hover{background:var(--blue);border-color:transparent;transform:translateY(-2px)}
 #back-top svg{width:18px;height:18px;stroke:#fff;stroke-width:2.5;fill:none}
 
+/* ─── HERO PHOTO ─────────────────────────────────── */
+.hero-photo-wrap{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.45);aspect-ratio:3/4;max-height:580px}
+.hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.hero-photo-wrap:hover img{transform:scale(1.03)}
+.hero-photo-wrap::after{content:'';position:absolute;inset:0;border-radius:28px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.1);pointer-events:none}
+.hero-stat-badge{position:absolute;background:rgba(5,17,31,.85);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px}
+.hero-stat-badge.b1{bottom:28px;left:-16px}
+.hero-stat-badge.b2{top:28px;right:-16px}
+.hero-stat-badge-icon{width:36px;height:36px;border-radius:10px;background:rgba(59,130,246,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-stat-badge-icon svg{width:18px;height:18px;color:var(--cyan)}
+.hero-stat-badge-num{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.hero-stat-badge-label{font-size:11px;color:rgba(255,255,255,.45);margin-top:1px}
+
+/* ─── WHY PHOTO ──────────────────────────────────── */
+.why-photo-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.why-photo-wrap img{width:100%;display:block;object-fit:cover;aspect-ratio:3/4}
+.why-photo-badge{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(5,17,31,.88);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:14px}
+.why-photo-badge svg{width:20px;height:20px;color:var(--cyan);flex-shrink:0}
+.why-photo-badge-text{font-size:14px;font-weight:700;color:#fff}
+.why-photo-badge-sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:2px}
+
+/* ─── GALLERY ─────────────────────────────────────── */
+.gallery-section{padding:100px 0;background:var(--surface)}
+.gallery-head{text-align:center;margin-bottom:48px}
+.gallery-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px}
+.gf-btn{padding:9px 22px;border-radius:100px;font-size:14px;font-weight:600;color:var(--muted);background:#fff;border:1.5px solid var(--border);cursor:pointer;transition:all .2s;font-family:inherit}
+.gf-btn:hover{border-color:var(--blue);color:var(--blue2)}
+.gf-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.gallery-grid{columns:3;column-gap:16px}
+@media(max-width:900px){.gallery-grid{columns:2}}
+@media(max-width:480px){.gallery-grid{columns:1}}
+.gallery-item{break-inside:avoid;margin-bottom:16px;border-radius:16px;overflow:hidden;cursor:pointer;position:relative;display:block}
+.gallery-item.hidden{display:none}
+.gallery-item img{width:100%;display:block;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,17,31,.8) 0%,transparent 55%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:18px}
+.gallery-item:hover .gallery-item-overlay{opacity:1}
+.gallery-item-caption{font-size:13px;font-weight:600;color:#fff;line-height:1.4}
+
+/* ─── LIGHTBOX ───────────────────────────────────── */
+.lightbox{position:fixed;inset:0;background:rgba(5,17,31,.96);z-index:4000;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
+.lightbox.open{opacity:1;pointer-events:all}
+.lightbox-img{max-width:90vw;max-height:86vh;border-radius:16px;box-shadow:0 32px 80px rgba(0,0,0,.5);object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,.2)}
+.lightbox-close svg{width:20px;height:20px;stroke:#fff;stroke-width:2.5;fill:none}
+.lightbox-caption{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:10px 24px;font-size:14px;font-weight:600;color:#fff;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s}
+.lightbox-nav:hover{background:rgba(255,255,255,.2)}
+.lightbox-nav svg{width:22px;height:22px;stroke:#fff;stroke-width:2.5;fill:none}
+.lightbox-prev{left:20px}
+.lightbox-next{right:20px}
+
 /* ─── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:1024px){
   .services-grid{grid-template-columns:repeat(2,1fr)}
@@ -396,6 +449,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <a href="#services" class="nav-link">Nos Services</a>
         <a href="#about"    class="nav-link">À Propos</a>
         <a href="#projects" class="nav-link">Réalisations</a>
+        <a href="#galerie"  class="nav-link">Galerie</a>
         <a href="#contact"  class="nav-link">Contact</a>
       </div>
       <div class="nav-cta">
@@ -413,6 +467,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <a href="#services" class="nav-link">Nos Services</a>
   <a href="#about"    class="nav-link">À Propos</a>
   <a href="#projects" class="nav-link">Réalisations</a>
+  <a href="#galerie"  class="nav-link">Galerie</a>
   <a href="#contact"  class="nav-link">Contact</a>
   <a href="#contact" class="btn btn-primary">Nous Contacter →</a>
 </div>
@@ -464,46 +519,26 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
 
       <div class="hero-visual reveal reveal-delay-2">
-        <!-- Server rack status card -->
-        <div class="rack-card">
-          <div class="rack-card-header">
-            <span class="rack-card-title">Infrastructure Status</span>
-            <span class="rack-live-badge"><span class="rack-live-dot"></span>LIVE</span>
-          </div>
-          <div class="rack-grid" id="rackGrid"></div>
-          <div class="rack-stats">
-            <div class="rack-stat">
-              <div class="rack-stat-val blue">98%</div>
-              <div class="rack-stat-label">Actifs</div>
+        <div class="hero-photo-wrap">
+          <img src="assets/photos/gallery/gallery-04.jpg" alt="Salle datacenter — installation AFREN" loading="eager">
+          <div class="hero-stat-badge b1">
+            <div class="hero-stat-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div class="rack-stat">
-              <div class="rack-stat-val">21°C</div>
-              <div class="rack-stat-label">Température</div>
-            </div>
-            <div class="rack-stat">
-              <div class="rack-stat-val blue">1.3</div>
-              <div class="rack-stat-label">PUE</div>
+            <div>
+              <div class="hero-stat-badge-num">99.9% SLA</div>
+              <div class="hero-stat-badge-label">Disponibilité garantie</div>
             </div>
           </div>
-        </div>
-        <!-- Uptime card -->
-        <div class="uptime-card">
-          <div class="uptime-ring">
-            <svg viewBox="0 0 60 60">
-              <circle class="track" cx="30" cy="30" r="26"/>
-              <circle class="fill" cx="30" cy="30" r="26"/>
-            </svg>
-            <span class="uptime-pct">99.9</span>
+          <div class="hero-stat-badge b2">
+            <div class="hero-stat-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <div class="hero-stat-badge-num">Sous 4h</div>
+              <div class="hero-stat-badge-label">Intervention terrain</div>
+            </div>
           </div>
-          <div>
-            <div class="uptime-info-label">Disponibilité SLA</div>
-            <div class="uptime-info-val">99.9% Uptime</div>
-            <div class="uptime-info-sub">Maintenance proactive · SLA garanti</div>
-          </div>
-        </div>
-        <div class="float-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span class="float-badge-text">Intervention sous 4h</span>
         </div>
       </div>
     </div>
@@ -604,26 +639,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="container">
     <div class="why-inner">
       <div class="why-visual">
-        <div class="why-card-stack">
-          <div class="why-stat-card blue reveal">
-            <div class="why-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div class="why-photo-wrap reveal">
+          <img src="assets/photos/gallery/gallery-13.jpg" alt="Équipe AFREN en intervention sur rack serveur" loading="lazy">
+          <div class="why-photo-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <div>
-              <div class="why-stat-num">15+ ans</div>
-              <div class="why-stat-label">D'expérience combinée en datacenter</div>
-            </div>
-          </div>
-          <div class="why-stat-card reveal reveal-delay-1">
-            <div class="why-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
-            <div>
-              <div class="why-stat-num" data-count="60000">0<span>+</span></div>
-              <div class="why-stat-label">Points de câblage restructurés</div>
-            </div>
-          </div>
-          <div class="why-stat-card reveal reveal-delay-2">
-            <div class="why-stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></div>
-            <div>
-              <div class="why-stat-num" data-count="1500">0<span>+</span></div>
-              <div class="why-stat-label">Équipements relocalisés</div>
+              <div class="why-photo-badge-text">Équipe AFREN certifiée</div>
+              <div class="why-photo-badge-sub">15+ ans d'expérience · Intervention 24/7</div>
             </div>
           </div>
         </div>
@@ -779,6 +801,83 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="partner-item reveal reveal-delay-1"><span>Dataracks</span></div>
       <div class="partner-item reveal reveal-delay-2"><span>Ineo</span></div>
       <div class="partner-item reveal reveal-delay-3"><span>Thésée</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GALERIE ════════════════════════════════════════ -->
+<section id="galerie" class="gallery-section">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <div class="section-label">Nos Chantiers</div>
+      <h2 class="section-title">Réalisations<br><span>en Images</span></h2>
+      <p class="section-sub" style="margin:12px auto 0;text-align:center">Photos authentiques de nos interventions terrain — de l'installation de confinement au déploiement complet.</p>
+    </div>
+    <div class="gallery-filters">
+      <button class="gf-btn active" data-filter="all">Tout voir</button>
+      <button class="gf-btn" data-filter="datacenter">Datacenters</button>
+      <button class="gf-btn" data-filter="confinement">Confinement</button>
+      <button class="gf-btn" data-filter="cablage">Câblage</button>
+      <button class="gf-btn" data-filter="equipe">Notre Équipe</button>
+      <button class="gf-btn" data-filter="relocation">Relocation</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item" data-cat="confinement" data-caption="Installation des rails de confinement allée froide">
+        <img src="assets/photos/gallery/gallery-01.jpg" alt="Rails de confinement allée froide" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Installation rails de confinement</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipe" data-caption="Technicien AFREN lors d'une installation de baie">
+        <img src="assets/photos/gallery/gallery-02.jpg" alt="Technicien AFREN installation" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Technicien AFREN en intervention</span></div>
+      </div>
+      <div class="gallery-item" data-cat="confinement" data-caption="Cage de confinement allée froide — salle en production">
+        <img src="assets/photos/gallery/gallery-03.jpg" alt="Cage de confinement allée froide" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Cage de confinement allée froide</span></div>
+      </div>
+      <div class="gallery-item" data-cat="datacenter" data-caption="Couloir de baies — salle machine optimisée AFREN">
+        <img src="assets/photos/gallery/gallery-04.jpg" alt="Couloir de baies datacenter" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Couloir de baies optimisé</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipe" data-caption="Installation du câblage d'alimentation en hauteur">
+        <img src="assets/photos/gallery/gallery-05.jpg" alt="Installation câblage en hauteur" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Installation câblage alimentation en hauteur</span></div>
+      </div>
+      <div class="gallery-item" data-cat="cablage" data-caption="Avant / Après : restructuration complète du câblage rack">
+        <img src="assets/photos/gallery/gallery-06.jpg" alt="Avant après câblage rack" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Avant / Après — restructuration câblage</span></div>
+      </div>
+      <div class="gallery-item" data-cat="cablage" data-caption="Baie informatique complète câblée et documentée">
+        <img src="assets/photos/gallery/gallery-07.jpg" alt="Baie câblée et documentée" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Baie câblée et documentée</span></div>
+      </div>
+      <div class="gallery-item" data-cat="datacenter" data-caption="Déploiement d'une salle machine — mise en service progressive">
+        <img src="assets/photos/gallery/gallery-08.jpg" alt="Salle machine en déploiement" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Salle machine en cours de déploiement</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipe" data-caption="Briefing sécurité de l'équipe AFREN avant intervention chantier">
+        <img src="assets/photos/gallery/gallery-09.jpg" alt="Briefing sécurité équipe AFREN" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Briefing sécurité avant intervention</span></div>
+      </div>
+      <div class="gallery-item" data-cat="datacenter" data-caption="Grande salle datacenter — déploiement multi-baies">
+        <img src="assets/photos/gallery/gallery-10.jpg" alt="Grande salle datacenter multi-baies" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Grande salle — déploiement multi-baies</span></div>
+      </div>
+      <div class="gallery-item" data-cat="datacenter" data-caption="Projet relocation multi-sites — deux salles machine">
+        <img src="assets/photos/gallery/gallery-11.jpg" alt="Relocation multi-sites deux salles" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Relocation multi-sites — deux salles</span></div>
+      </div>
+      <div class="gallery-item" data-cat="relocation" data-caption="Déchargement d'équipements pour relocation datacenter">
+        <img src="assets/photos/gallery/gallery-12.jpg" alt="Déchargement équipements relocation" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Déchargement équipements — relocation</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipe" data-caption="Équipe AFREN en intervention sur rack serveur">
+        <img src="assets/photos/gallery/gallery-13.jpg" alt="Équipe AFREN rack serveur" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Équipe AFREN en intervention rack</span></div>
+      </div>
+      <div class="gallery-item" data-cat="confinement" data-caption="Préparation et mesure des rails de confinement sur site">
+        <img src="assets/photos/gallery/gallery-14.jpg" alt="Préparation rails de confinement" loading="lazy">
+        <div class="gallery-item-overlay"><span class="gallery-item-caption">Préparation rails de confinement sur site</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -995,6 +1094,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </div>
 
 <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+<!-- ═══ LIGHTBOX ═════════════════════════════════════ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <button class="lightbox-nav lightbox-prev" id="lbPrev"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <img class="lightbox-img" id="lbImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lbNext"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+  <div class="lightbox-caption" id="lbCaption"></div>
+</div>
 
 <script>
 /* ── Rack grid animation ── */
@@ -1252,6 +1360,58 @@ document.getElementById('contact-form').addEventListener('submit', async e => {
       btn.style.background = '';
     }, 3500);
   }
+});
+
+/* ── Gallery filter ── */
+const gfBtns = document.querySelectorAll('.gf-btn');
+const gItems = document.querySelectorAll('.gallery-item');
+gfBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    gfBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    gItems.forEach(item => {
+      item.classList.toggle('hidden', f !== 'all' && item.dataset.cat !== f);
+    });
+  });
+});
+
+/* ── Lightbox ── */
+const lightbox = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lbImg');
+const lbCap    = document.getElementById('lbCaption');
+let lbItems = [], lbIdx = 0;
+
+function openLightbox(items, idx) {
+  lbItems = items; lbIdx = idx; showLb();
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function showLb() {
+  const it = lbItems[lbIdx];
+  lbImg.src = it.querySelector('img').src;
+  lbImg.alt = it.querySelector('img').alt;
+  lbCap.textContent = it.dataset.caption;
+}
+function closeLb() {
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('lbClose').addEventListener('click', closeLb);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
+document.getElementById('lbPrev').addEventListener('click', () => { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; showLb(); });
+document.getElementById('lbNext').addEventListener('click', () => { lbIdx = (lbIdx + 1) % lbItems.length; showLb(); });
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft')  { lbIdx = (lbIdx - 1 + lbItems.length) % lbItems.length; showLb(); }
+  if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbItems.length; showLb(); }
+});
+document.querySelectorAll('.gallery-item').forEach((item, _, arr) => {
+  item.addEventListener('click', () => {
+    const visible = [...arr].filter(el => !el.classList.contains('hidden'));
+    openLightbox(visible, visible.indexOf(item));
+  });
 });
 </script>
 </body>
