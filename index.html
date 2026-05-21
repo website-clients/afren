@@ -239,12 +239,13 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .project-desc{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6}
 
 /* ─── PARTENAIRES ────────────────────────────────── */
-.partners-section{padding:80px 0;background:var(--surface)}
-.partners-header{text-align:center;margin-bottom:48px}
-.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px}
-.partner-item{display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--border);border-radius:var(--r-md);padding:20px 36px;min-width:140px;transition:all .25s}
-.partner-item:hover{border-color:rgba(59,130,246,.35);box-shadow:0 8px 28px rgba(59,130,246,.08);transform:translateY(-2px)}
-.partner-item span{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.partners-section{padding:80px 0;background:#fff;border-top:1px solid var(--border)}
+.partners-header{text-align:center;margin-bottom:52px}
+.partners-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px}
+.partner-item{display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid var(--border);border-radius:var(--r-md);padding:24px 40px;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.partner-item img{height:52px;width:auto;object-fit:contain;display:block;filter:grayscale(100%) opacity(.6);transition:filter .3s,transform .3s}
+.partner-item:hover{border-color:rgba(59,130,246,.3);box-shadow:0 10px 32px rgba(59,130,246,.09);transform:translateY(-3px)}
+.partner-item:hover img{filter:grayscale(0%) opacity(1);transform:scale(1.05)}
 
 /* ─── WHO WE HELP ───────────────────────────────── */
 .who-section{padding:80px 0;background:#fff}
@@ -801,12 +802,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="partners-header reveal">
       <div class="section-label" data-i18n="part-label">Partenaires &amp; Clients</div>
       <h2 class="section-title" data-i18n="part-title">Ils Nous Font Confiance</h2>
+      <p class="section-sub" style="margin:12px auto 0;text-align:center" data-i18n="part-sub">Des acteurs majeurs du secteur datacenter en France font confiance à AFREN pour leurs projets d'infrastructure.</p>
     </div>
     <div class="partners-logos">
-      <div class="partner-item reveal"><span>Data4</span></div>
-      <div class="partner-item reveal reveal-delay-1"><span>Dataracks</span></div>
-      <div class="partner-item reveal reveal-delay-2"><span>Ineo</span></div>
-      <div class="partner-item reveal reveal-delay-3"><span>Thésée</span></div>
+      <div class="partner-item reveal">
+        <img src="assets/photos/clients/client-data4.jpg" alt="Data4 — Smart &amp; Scalable Data Centers" loading="lazy">
+      </div>
+      <div class="partner-item reveal reveal-delay-1">
+        <img src="assets/photos/clients/client-dataracks.jpg" alt="Dataracks" loading="lazy">
+      </div>
+      <div class="partner-item reveal reveal-delay-2">
+        <img src="assets/photos/clients/client-ineo.jpg" alt="INEO — Une marque de Equans" loading="lazy">
+      </div>
+      <div class="partner-item reveal reveal-delay-3">
+        <img src="assets/photos/clients/client-thesee.jpg" alt="Thésée Datacenter" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
@@ -1245,7 +1255,7 @@ const en = {
   'who-label':'Industries','who-title':'Sectors We Serve','who-sub':'AFREN operates in critical environments with high availability requirements.',
   'gal-label':'Our Work','gal-title':'Projects<br><span>in Pictures</span>','gal-sub':'Authentic photos from our field interventions — from containment installation to full deployment.',
   'gf-all':'View All','gf-dc':'Datacenters','gf-conf':'Containment','gf-cab':'Cabling','gf-team':'Our Team','gf-relo':'Relocation',
-  'part-label':'Partners &amp; Clients','part-title':'They Trust Us',
+  'part-label':'Partners &amp; Clients','part-title':'They Trust Us','part-sub':'Major players in the French datacenter sector trust AFREN for their infrastructure projects.',
   'cta-title':'Ready to Optimize<br>Your <span>Datacenter</span>?','cta-sub':'Let\'s discuss your project. Our team of experts is available to analyse your needs and propose solutions tailored to your infrastructure.',
   'cta-btn':'Start a Project',
   'contact-title':'Let\'s Talk About<br><span>Your Project</span>','contact-sub':'Whether for an audit, deployment or operational support, our team is ready to address your datacenter needs with responsiveness and expertise.',
