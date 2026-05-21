@@ -72,11 +72,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
 .nav.scrolled{background:rgba(5,17,31,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-mark{width:36px;height:36px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center}
-.nav-logo-mark svg{width:20px;height:20px;color:#fff}
-.nav-logo-text{font-size:18px;font-weight:900;color:#fff;letter-spacing:-.04em}
-.nav-logo-text span{color:var(--cyan)}
+.nav-logo{display:flex;align-items:center}
+.nav-logo img{height:40px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:4px}
 .nav-link{padding:8px 16px;border-radius:8px;font-size:14px;font-weight:500;color:rgba(255,255,255,.65);transition:color .2s,background .2s}
 .nav-link:hover{color:#fff;background:rgba(255,255,255,.07)}
@@ -308,10 +305,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:64px 0 32px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.06)}
 .footer-brand{display:flex;flex-direction:column;gap:16px}
-.footer-logo{display:flex;align-items:center;gap:10px}
-.footer-logo-mark{width:32px;height:32px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.footer-logo-mark svg{width:18px;height:18px;color:#fff}
-.footer-logo-text{font-size:16px;font-weight:900;color:#fff;letter-spacing:-.03em}
+.footer-logo{display:flex;align-items:center}
+.footer-logo img{height:36px;width:auto;display:block}
 .footer-tagline{font-size:14px;color:rgba(255,255,255,.35);line-height:1.65;max-width:240px}
 .footer-social{display:flex;gap:10px;margin-top:4px}
 .footer-social-btn{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:all .2s}
@@ -440,10 +435,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="container">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-mark">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 7h.01M9 7h.01M12 7h6"/><path d="M6 11h12"/></svg>
-        </div>
-        <span class="nav-logo-text">AFR<span>EN</span></span>
+        <img src="assets/logo-white.png" alt="AFREN — Data Center Services">
       </a>
       <div class="nav-links">
         <a href="#services" class="nav-link">Nos Services</a>
@@ -1008,10 +1000,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <div class="footer-logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <span class="footer-logo-text">AFREN</span>
+          <img src="assets/logo-white.png" alt="AFREN — Data Center Services">
         </div>
         <p class="footer-tagline">La Qualité Notre Motivation. Votre partenaire de confiance pour le cycle de vie complet de votre Datacenter.</p>
         <div class="footer-social">
