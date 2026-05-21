@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Read(//c/workspace-oman/**)",
-      "WebFetch(domain:afren.co)"
+      "WebFetch(domain:afren.co)",
+      "WebFetch(domain:api.github.com)",
+      "Bash(gh api *)",
+      "PowerShell(gh api repos/website-clients/afren/pages 2>&1)",
+      "PowerShell(New-Item -ItemType File -Path \"c:\\\\workspace-oman\\\\AFREN\\\\.nojekyll\" -Force)"
     ]
   }
 }
