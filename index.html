@@ -424,6 +424,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   #back-top{bottom:16px;left:16px}
   .smodal-body{padding:0 24px 32px}
 }
+
+/* ─── LANG SWITCH ────────────────────────────────── */
+.lang-switch{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:3px}
+.lang-btn{font-size:12px;font-weight:700;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer;padding:4px 10px;border-radius:6px;transition:all .18s;font-family:inherit;letter-spacing:.05em}
+.lang-btn.active{background:var(--blue);color:#fff}
+.lang-btn:hover:not(.active){color:rgba(255,255,255,.8);background:rgba(255,255,255,.07)}
 </style>
 </head>
 <body>
@@ -438,14 +444,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <img src="assets/logo-white.png" alt="AFREN — Data Center Services">
       </a>
       <div class="nav-links">
-        <a href="#services" class="nav-link">Nos Services</a>
-        <a href="#about"    class="nav-link">À Propos</a>
-        <a href="#projects" class="nav-link">Réalisations</a>
-        <a href="#galerie"  class="nav-link">Galerie</a>
-        <a href="#contact"  class="nav-link">Contact</a>
+        <a href="#services" class="nav-link" data-i18n="nav-services">Nos Services</a>
+        <a href="#about"    class="nav-link" data-i18n="nav-about">À Propos</a>
+        <a href="#projects" class="nav-link" data-i18n="nav-projects">Réalisations</a>
+        <a href="#galerie"  class="nav-link" data-i18n="nav-gallery">Galerie</a>
+        <a href="#contact"  class="nav-link" data-i18n="nav-contact">Contact</a>
       </div>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:14px">Nous Contacter</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:14px" data-i18n="nav-cta-btn">Nous Contacter</a>
       </div>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -456,12 +466,16 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 <!-- Mobile nav -->
 <div class="nav-mobile" id="mobile-nav">
-  <a href="#services" class="nav-link">Nos Services</a>
-  <a href="#about"    class="nav-link">À Propos</a>
-  <a href="#projects" class="nav-link">Réalisations</a>
-  <a href="#galerie"  class="nav-link">Galerie</a>
-  <a href="#contact"  class="nav-link">Contact</a>
-  <a href="#contact" class="btn btn-primary">Nous Contacter →</a>
+  <a href="#services" class="nav-link" data-i18n="nav-services">Nos Services</a>
+  <a href="#about"    class="nav-link" data-i18n="nav-about">À Propos</a>
+  <a href="#projects" class="nav-link" data-i18n="nav-projects">Réalisations</a>
+  <a href="#galerie"  class="nav-link" data-i18n="nav-gallery">Galerie</a>
+  <a href="#contact"  class="nav-link" data-i18n="nav-contact">Contact</a>
+  <div class="lang-switch" style="margin:8px 0">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="#contact" class="btn btn-primary" data-i18n="nav-cta-btn">Nous Contacter →</a>
 </div>
 
 <!-- ═══ HERO ══════════════════════════════════════════ -->
@@ -476,36 +490,36 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="hero-content reveal">
         <div class="hero-badge">
           <div class="hero-badge-dot"></div>
-          <span class="hero-badge-text">Expert Datacenter · France</span>
+          <span class="hero-badge-text" data-i18n="hero-badge">Expert Datacenter · France</span>
         </div>
-        <h1 class="hero-heading">
+        <h1 class="hero-heading" data-i18n="hero-h1">
           Votre Datacenter,<br>
           <em>Notre Expertise.</em>
           <span class="line2">Du cycle de vie complet.</span>
         </h1>
-        <p class="hero-desc">AFREN accompagne les entreprises dans la gestion complète du cycle de vie de leur infrastructure datacenter — de l'audit stratégique à la maintenance opérationnelle 24/7.</p>
+        <p class="hero-desc" data-i18n="hero-desc">AFREN accompagne les entreprises dans la gestion complète du cycle de vie de leur infrastructure datacenter — de l'audit stratégique à la maintenance opérationnelle 24/7.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-            Démarrer un Projet
+            <span data-i18n="hero-btn1">Démarrer un Projet</span>
           </a>
           <a href="#services" class="btn btn-outline">
-            Nos Services
+            <span data-i18n="hero-btn2">Nos Services</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
         <div class="hero-stats">
           <div>
-            <div class="hero-stat-num">15<span>+ ans</span></div>
-            <div class="hero-stat-label">D'expérience combinée</div>
+            <div class="hero-stat-num" data-i18n="hero-stat1-num">15<span>+ ans</span></div>
+            <div class="hero-stat-label" data-i18n="hero-stat1-lbl">D'expérience combinée</div>
           </div>
           <div>
-            <div class="hero-stat-num">50<span>+</span></div>
-            <div class="hero-stat-label">Projets réalisés</div>
+            <div class="hero-stat-num" data-i18n="hero-stat2-num">50<span>+</span></div>
+            <div class="hero-stat-label" data-i18n="hero-stat2-lbl">Projets réalisés</div>
           </div>
           <div>
-            <div class="hero-stat-num">24<span>/7</span></div>
-            <div class="hero-stat-label">Support opérationnel</div>
+            <div class="hero-stat-num" data-i18n="hero-stat3-num">24<span>/7</span></div>
+            <div class="hero-stat-label" data-i18n="hero-stat3-lbl">Support opérationnel</div>
           </div>
         </div>
       </div>
@@ -518,8 +532,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <div>
-              <div class="hero-stat-badge-num">99.9% SLA</div>
-              <div class="hero-stat-badge-label">Disponibilité garantie</div>
+              <div class="hero-stat-badge-num" data-i18n="badge1-num">99.9% SLA</div>
+              <div class="hero-stat-badge-label" data-i18n="badge1-lbl">Disponibilité garantie</div>
             </div>
           </div>
           <div class="hero-stat-badge b2">
@@ -527,8 +541,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             </div>
             <div>
-              <div class="hero-stat-badge-num">Sous 4h</div>
-              <div class="hero-stat-badge-label">Intervention terrain</div>
+              <div class="hero-stat-badge-num" data-i18n="badge2-num">Sous 4h</div>
+              <div class="hero-stat-badge-label" data-i18n="badge2-lbl">Intervention terrain</div>
             </div>
           </div>
         </div>
@@ -565,12 +579,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="container">
     <div class="services-head">
       <div class="reveal">
-        <div class="section-label">Ce Que Nous Faisons</div>
-        <h2 class="section-title">Services Datacenter<br><span>Complets &amp; Certifiés</span></h2>
+        <div class="section-label" data-i18n="svc-label">Ce Que Nous Faisons</div>
+        <h2 class="section-title" data-i18n="svc-title">Services Datacenter<br><span>Complets &amp; Certifiés</span></h2>
       </div>
       <div class="reveal reveal-delay-1">
-        <p class="section-sub" style="margin-top:0">De l'audit stratégique à la maintenance opérationnelle, AFREN intervient à chaque étape du cycle de vie de votre infrastructure datacenter.</p>
-        <a href="#contact" class="btn btn-dark" style="margin-top:20px">Demander un Devis →</a>
+        <p class="section-sub" style="margin-top:0" data-i18n="svc-sub">De l'audit stratégique à la maintenance opérationnelle, AFREN intervient à chaque étape du cycle de vie de votre infrastructure datacenter.</p>
+        <a href="#contact" class="btn btn-dark" style="margin-top:20px" data-i18n="svc-quote-btn">Demander un Devis →</a>
       </div>
     </div>
     <div class="services-grid">
@@ -578,49 +592,49 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>
         </div>
-        <h3>Audit &amp; Conseil</h3>
-        <p>Évaluation complète de vos processus datacenter, identification des axes d'optimisation et mise en place de plans d'action pour assurer la continuité de service.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s1-title">Audit &amp; Conseil</h3>
+        <p data-i18n="s1-desc">Évaluation complète de vos processus datacenter, identification des axes d'optimisation et mise en place de plans d'action pour assurer la continuité de service.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
       <div class="service-card reveal reveal-delay-1" data-modal="inventory">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>
         </div>
-        <h3>Gestion d'Inventaire</h3>
-        <p>Catalogage exhaustif des équipements et du câblage, jusqu'à l'implémentation d'outils DCIM pour une visibilité totale et en temps réel de votre infrastructure.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s2-title">Gestion d'Inventaire</h3>
+        <p data-i18n="s2-desc">Catalogage exhaustif des équipements et du câblage, jusqu'à l'implémentation d'outils DCIM pour une visibilité totale et en temps réel de votre infrastructure.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
       <div class="service-card reveal reveal-delay-2" data-modal="confinement">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4M2 7h20"/></svg>
         </div>
-        <h3>Confinement &amp; Installation de Baies</h3>
-        <p>Optimisation environnementale de votre salle machine et réduction de votre PUE. Partenariats constructeurs pour des solutions certifiées et durables.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s3-title">Confinement &amp; Installation de Baies</h3>
+        <p data-i18n="s3-desc">Optimisation environnementale de votre salle machine et réduction de votre PUE. Partenariats constructeurs pour des solutions certifiées et durables.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
       <div class="service-card reveal" data-modal="cabling">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
         </div>
-        <h3>Urbanisation, Déploiement &amp; Câblage</h3>
-        <p>Installation et identification des équipements, gestion rigoureuse des câbles avec documentation complète des assets pour une infrastructure maîtrisée.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s4-title">Urbanisation, Déploiement &amp; Câblage</h3>
+        <p data-i18n="s4-desc">Installation et identification des équipements, gestion rigoureuse des câbles avec documentation complète des assets pour une infrastructure maîtrisée.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
       <div class="service-card reveal reveal-delay-1" data-modal="relocation">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/><path d="M3 19V5"/></svg>
         </div>
-        <h3>Conduite de Projet Relocation</h3>
-        <p>Pilotage complet des migrations d'équipements IT complexes, avec une rigueur méthodologique garantissant zéro perte de données et un downtime minimal.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s5-title">Conduite de Projet Relocation</h3>
+        <p data-i18n="s5-desc">Pilotage complet des migrations d'équipements IT complexes, avec une rigueur méthodologique garantissant zéro perte de données et un downtime minimal.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
       <div class="service-card reveal reveal-delay-2" data-modal="support">
         <div class="service-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         </div>
-        <h3>Support Opérationnel 24/7</h3>
-        <p>Gestion opérationnelle continue et interventions rapides selon les SLAs définis. Votre infrastructure surveillée et maintenue à tout moment par nos équipes expertes.</p>
-        <span class="service-link">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        <h3 data-i18n="s6-title">Support Opérationnel 24/7</h3>
+        <p data-i18n="s6-desc">Gestion opérationnelle continue et interventions rapides selon les SLAs définis. Votre infrastructure surveillée et maintenue à tout moment par nos équipes expertes.</p>
+        <span class="service-link"><span data-i18n="svc-link">En savoir plus</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
       </div>
     </div>
   </div>
@@ -636,38 +650,38 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
           <div class="why-photo-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <div>
-              <div class="why-photo-badge-text">Équipe AFREN certifiée</div>
-              <div class="why-photo-badge-sub">15+ ans d'expérience · Intervention 24/7</div>
+              <div class="why-photo-badge-text" data-i18n="why-badge-text">Équipe AFREN certifiée</div>
+              <div class="why-photo-badge-sub" data-i18n="why-badge-sub">15+ ans d'expérience · Intervention 24/7</div>
             </div>
           </div>
         </div>
       </div>
       <div>
         <div class="reveal">
-          <div class="section-label">Pourquoi AFREN</div>
-          <h2 class="section-title">La Qualité<br><span>Notre Motivation</span></h2>
-          <p class="section-sub">Nous combinons expertise technique, innovation et engagement qualité pour livrer des projets datacenter qui dépassent vos attentes. Notre passion pour l'infrastructure IT est notre meilleur atout.</p>
+          <div class="section-label" data-i18n="why-label">Pourquoi AFREN</div>
+          <h2 class="section-title" data-i18n="why-title">La Qualité<br><span>Notre Motivation</span></h2>
+          <p class="section-sub" data-i18n="why-sub">Nous combinons expertise technique, innovation et engagement qualité pour livrer des projets datacenter qui dépassent vos attentes. Notre passion pour l'infrastructure IT est notre meilleur atout.</p>
         </div>
         <div class="why-list">
           <div class="why-item reveal reveal-delay-1">
             <div class="why-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div>
-              <div class="why-item-title">Expertise Technique Approfondie</div>
-              <div class="why-item-text">15+ ans d'expérience combinée sur des projets datacenter complexes pour les plus grandes entreprises françaises.</div>
+              <div class="why-item-title" data-i18n="why1-title">Expertise Technique Approfondie</div>
+              <div class="why-item-text" data-i18n="why1-text">15+ ans d'expérience combinée sur des projets datacenter complexes pour les plus grandes entreprises françaises.</div>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-2">
             <div class="why-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
             <div>
-              <div class="why-item-title">Réactivité &amp; Flexibilité</div>
-              <div class="why-item-text">Capacité à s'adapter rapidement aux contraintes opérationnelles et aux environnements de production les plus sensibles.</div>
+              <div class="why-item-title" data-i18n="why2-title">Réactivité &amp; Flexibilité</div>
+              <div class="why-item-text" data-i18n="why2-text">Capacité à s'adapter rapidement aux contraintes opérationnelles et aux environnements de production les plus sensibles.</div>
             </div>
           </div>
           <div class="why-item reveal reveal-delay-3">
             <div class="why-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
             <div>
-              <div class="why-item-title">Orienté Résultats &amp; Sécurité</div>
-              <div class="why-item-text">Chaque intervention est planifiée avec rigueur. La sécurité des installations et la continuité de service sont notre priorité absolue.</div>
+              <div class="why-item-title" data-i18n="why3-title">Orienté Résultats &amp; Sécurité</div>
+              <div class="why-item-text" data-i18n="why3-text">Chaque intervention est planifiée avec rigueur. La sécurité des installations et la continuité de service sont notre priorité absolue.</div>
             </div>
           </div>
         </div>
@@ -680,26 +694,26 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <section id="process" class="process-section">
   <div class="container">
     <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto">
-      <div class="section-label">Comment Ça Marche</div>
-      <h2 class="section-title">Démarrez votre Projet<br><span>en 3 Étapes</span></h2>
+      <div class="section-label" data-i18n="proc-label">Comment Ça Marche</div>
+      <h2 class="section-title" data-i18n="proc-title">Démarrez votre Projet<br><span>en 3 Étapes</span></h2>
     </div>
     <div class="process-grid">
       <div class="process-card reveal">
         <div class="process-num">01</div>
-        <h3>Analyse &amp; Diagnostic</h3>
-        <p>Nous évaluons votre infrastructure actuelle, identifions vos besoins et définissons ensemble les objectifs de votre projet datacenter.</p>
+        <h3 data-i18n="proc1-title">Analyse &amp; Diagnostic</h3>
+        <p data-i18n="proc1-desc">Nous évaluons votre infrastructure actuelle, identifions vos besoins et définissons ensemble les objectifs de votre projet datacenter.</p>
         <div class="process-connector"></div>
       </div>
       <div class="process-card reveal reveal-delay-1">
         <div class="process-num">02</div>
-        <h3>Plan d'Action Sur Mesure</h3>
-        <p>Nos experts conçoivent un plan d'intervention détaillé, adapté à vos contraintes techniques, opérationnelles et budgétaires.</p>
+        <h3 data-i18n="proc2-title">Plan d'Action Sur Mesure</h3>
+        <p data-i18n="proc2-desc">Nos experts conçoivent un plan d'intervention détaillé, adapté à vos contraintes techniques, opérationnelles et budgétaires.</p>
         <div class="process-connector"></div>
       </div>
       <div class="process-card reveal reveal-delay-2">
         <div class="process-num">03</div>
-        <h3>Exécution &amp; Suivi</h3>
-        <p>Réalisation du projet avec un suivi rigoureux, reporting régulier et garantie de qualité à chaque étape jusqu'à la livraison finale.</p>
+        <h3 data-i18n="proc3-title">Exécution &amp; Suivi</h3>
+        <p data-i18n="proc3-desc">Réalisation du projet avec un suivi rigoureux, reporting régulier et garantie de qualité à chaque étape jusqu'à la livraison finale.</p>
       </div>
     </div>
   </div>
@@ -711,51 +725,51 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="projects-glow"></div>
   <div class="container projects-inner">
     <div class="projects-head reveal">
-      <div class="section-label" style="color:var(--cyan)">Nos Réalisations</div>
-      <h2 class="section-title light">Des Projets à Grande<br><span style="color:var(--cyan)">Échelle Réalisés</span></h2>
-      <p class="section-sub light" style="margin:16px auto 0">AFREN a conduit des projets datacenter d'envergure pour des clients exigeants, avec une rigueur et une qualité d'exécution reconnues.</p>
+      <div class="section-label" style="color:var(--cyan)" data-i18n="proj-label">Nos Réalisations</div>
+      <h2 class="section-title light" data-i18n="proj-title">Des Projets à Grande<br><span style="color:var(--cyan)">Échelle Réalisés</span></h2>
+      <p class="section-sub light" style="margin:16px auto 0" data-i18n="proj-sub">AFREN a conduit des projets datacenter d'envergure pour des clients exigeants, avec une rigueur et une qualité d'exécution reconnues.</p>
     </div>
     <div class="stats-grid">
       <div class="stat-card reveal">
         <div class="stat-card-num" data-count="1000">0<span>+ m²</span></div>
-        <div class="stat-card-label">Confinement installé en<br>environnement de production</div>
+        <div class="stat-card-label" data-i18n="proj-stat1-lbl">Confinement installé en<br>environnement de production</div>
       </div>
       <div class="stat-card reveal reveal-delay-1">
         <div class="stat-card-num" data-count="1500">0<span>+</span></div>
-        <div class="stat-card-label">Équipements relocalisés<br>sur trois sites simultanément</div>
+        <div class="stat-card-label" data-i18n="proj-stat2-lbl">Équipements relocalisés<br>sur trois sites simultanément</div>
       </div>
       <div class="stat-card reveal reveal-delay-2">
         <div class="stat-card-num" data-count="60000">0<span>+</span></div>
-        <div class="stat-card-label">Points de câblage<br>restructurés en un projet</div>
+        <div class="stat-card-label" data-i18n="proj-stat3-lbl">Points de câblage<br>restructurés en un projet</div>
       </div>
     </div>
     <div class="projects-list">
       <div class="project-item reveal">
         <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 7h20M2 11h20"/></svg></div>
         <div>
-          <div class="project-title">Confinement allée froide/chaude — 1 000+ m²</div>
-          <div class="project-desc">Installation complète d'un système de confinement des allées dans un datacenter en exploitation, sans interruption de service. Réduction du PUE de 1.8 à 1.3.</div>
+          <div class="project-title" data-i18n="proj1-title">Confinement allée froide/chaude — 1 000+ m²</div>
+          <div class="project-desc" data-i18n="proj1-desc">Installation complète d'un système de confinement des allées dans un datacenter en exploitation, sans interruption de service. Réduction du PUE de 1.8 à 1.3.</div>
         </div>
       </div>
       <div class="project-item reveal reveal-delay-1">
         <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         <div>
-          <div class="project-title">Relocation multi-sites — 1 500+ équipements</div>
-          <div class="project-desc">Migration complexe d'équipements IT critiques sur trois sites géographiques distincts, avec coordination logistique et zéro incident majeur.</div>
+          <div class="project-title" data-i18n="proj2-title">Relocation multi-sites — 1 500+ équipements</div>
+          <div class="project-desc" data-i18n="proj2-desc">Migration complexe d'équipements IT critiques sur trois sites géographiques distincts, avec coordination logistique et zéro incident majeur.</div>
         </div>
       </div>
       <div class="project-item reveal">
         <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
         <div>
-          <div class="project-title">Restructuration câblage — 60 000+ points</div>
-          <div class="project-desc">Reprise complète du câblage cuivre et fibre d'un grand datacenter régional : labellisation, documentation et intégration DCIM intégrale.</div>
+          <div class="project-title" data-i18n="proj3-title">Restructuration câblage — 60 000+ points</div>
+          <div class="project-desc" data-i18n="proj3-desc">Reprise complète du câblage cuivre et fibre d'un grand datacenter régional : labellisation, documentation et intégration DCIM intégrale.</div>
         </div>
       </div>
       <div class="project-item reveal reveal-delay-1">
         <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
         <div>
-          <div class="project-title">Déploiement DCIM &amp; Inventaire complet</div>
-          <div class="project-desc">Implémentation d'un outil DCIM avec inventaire exhaustif de 5 000+ équipements actifs et passifs, intégration dans le système de supervision du client.</div>
+          <div class="project-title" data-i18n="proj4-title">Déploiement DCIM &amp; Inventaire complet</div>
+          <div class="project-desc" data-i18n="proj4-desc">Implémentation d'un outil DCIM avec inventaire exhaustif de 5 000+ équipements actifs et passifs, intégration dans le système de supervision du client.</div>
         </div>
       </div>
     </div>
@@ -766,9 +780,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <section class="who-section">
   <div class="container">
     <div class="who-header reveal">
-      <div class="section-label">Industries</div>
-      <h2 class="section-title">Secteurs que Nous Servons</h2>
-      <p class="section-sub" style="margin:12px auto 0;text-align:center">AFREN intervient dans des environnements critiques à forte exigence de disponibilité.</p>
+      <div class="section-label" data-i18n="who-label">Industries</div>
+      <h2 class="section-title" data-i18n="who-title">Secteurs que Nous Servons</h2>
+      <p class="section-sub" style="margin:12px auto 0;text-align:center" data-i18n="who-sub">AFREN intervient dans des environnements critiques à forte exigence de disponibilité.</p>
     </div>
     <div class="who-chips">
       <div class="who-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Finance &amp; Banque</div>
@@ -785,8 +799,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <section class="partners-section">
   <div class="container">
     <div class="partners-header reveal">
-      <div class="section-label">Partenaires &amp; Clients</div>
-      <h2 class="section-title">Ils Nous Font Confiance</h2>
+      <div class="section-label" data-i18n="part-label">Partenaires &amp; Clients</div>
+      <h2 class="section-title" data-i18n="part-title">Ils Nous Font Confiance</h2>
     </div>
     <div class="partners-logos">
       <div class="partner-item reveal"><span>Data4</span></div>
@@ -801,17 +815,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <section id="galerie" class="gallery-section">
   <div class="container">
     <div class="gallery-head reveal">
-      <div class="section-label">Nos Chantiers</div>
-      <h2 class="section-title">Réalisations<br><span>en Images</span></h2>
-      <p class="section-sub" style="margin:12px auto 0;text-align:center">Photos authentiques de nos interventions terrain — de l'installation de confinement au déploiement complet.</p>
+      <div class="section-label" data-i18n="gal-label">Nos Chantiers</div>
+      <h2 class="section-title" data-i18n="gal-title">Réalisations<br><span>en Images</span></h2>
+      <p class="section-sub" style="margin:12px auto 0;text-align:center" data-i18n="gal-sub">Photos authentiques de nos interventions terrain — de l'installation de confinement au déploiement complet.</p>
     </div>
     <div class="gallery-filters">
-      <button class="gf-btn active" data-filter="all">Tout voir</button>
-      <button class="gf-btn" data-filter="datacenter">Datacenters</button>
-      <button class="gf-btn" data-filter="confinement">Confinement</button>
-      <button class="gf-btn" data-filter="cablage">Câblage</button>
-      <button class="gf-btn" data-filter="equipe">Notre Équipe</button>
-      <button class="gf-btn" data-filter="relocation">Relocation</button>
+      <button class="gf-btn active" data-filter="all" data-i18n="gf-all">Tout voir</button>
+      <button class="gf-btn" data-filter="datacenter" data-i18n="gf-dc">Datacenters</button>
+      <button class="gf-btn" data-filter="confinement" data-i18n="gf-conf">Confinement</button>
+      <button class="gf-btn" data-filter="cablage" data-i18n="gf-cab">Câblage</button>
+      <button class="gf-btn" data-filter="equipe" data-i18n="gf-team">Notre Équipe</button>
+      <button class="gf-btn" data-filter="relocation" data-i18n="gf-relo">Relocation</button>
     </div>
     <div class="gallery-grid" id="galleryGrid">
       <div class="gallery-item" data-cat="confinement" data-caption="Installation des rails de confinement allée froide">
@@ -880,11 +894,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
     <div class="cta-inner">
       <div class="cta-glow"></div>
       <div class="cta-content reveal">
-        <h2 class="cta-title">Prêt à Optimiser<br>votre <span>Datacenter</span>&nbsp;?</h2>
-        <p class="cta-sub">Discutons de votre projet. Notre équipe d'experts est disponible pour analyser vos besoins et vous proposer des solutions adaptées à votre infrastructure.</p>
+        <h2 class="cta-title" data-i18n="cta-title">Prêt à Optimiser<br>votre <span>Datacenter</span>&nbsp;?</h2>
+        <p class="cta-sub" data-i18n="cta-sub">Discutons de votre projet. Notre équipe d'experts est disponible pour analyser vos besoins et vous proposer des solutions adaptées à votre infrastructure.</p>
       </div>
       <div class="cta-actions reveal reveal-delay-1">
-        <a href="#contact" class="btn btn-primary" style="width:220px;justify-content:center">Démarrer un Projet</a>
+        <a href="#contact" class="btn btn-primary" style="width:220px;justify-content:center" data-i18n="cta-btn">Démarrer un Projet</a>
         <div class="cta-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <a href="mailto:contact@afren.co">contact@afren.co</a>
@@ -903,8 +917,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   <div class="container">
     <div class="contact-inner">
       <div class="contact-info reveal">
-        <h2 class="contact-info-title">Parlons de<br><span>Votre Projet</span></h2>
-        <p class="contact-info-sub">Que ce soit pour un audit, un déploiement ou un support opérationnel, notre équipe est là pour répondre à vos besoins datacenter avec réactivité et expertise.</p>
+        <h2 class="contact-info-title" data-i18n="contact-title">Parlons de<br><span>Votre Projet</span></h2>
+        <p class="contact-info-sub" data-i18n="contact-sub">Que ce soit pour un audit, un déploiement ou un support opérationnel, notre équipe est là pour répondre à vos besoins datacenter avec réactivité et expertise.</p>
         <div class="contact-details">
           <div class="contact-detail">
             <div class="contact-detail-icon">
@@ -945,49 +959,49 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         </div>
       </div>
       <div class="contact-form-wrap reveal reveal-delay-1">
-        <div class="form-title">Envoyez-nous un Message</div>
-        <div class="form-sub">Décrivez votre projet, nous vous recontactons rapidement.</div>
+        <div class="form-title" data-i18n="form-title">Envoyez-nous un Message</div>
+        <div class="form-sub" data-i18n="form-sub">Décrivez votre projet, nous vous recontactons rapidement.</div>
         <form id="contact-form" novalidate>
           <div class="form-grid">
             <div class="form-field">
-              <label class="form-label" for="f-fname">Prénom *</label>
-              <input class="form-input" id="f-fname" name="fname" type="text" placeholder="Jean" required>
+              <label class="form-label" for="f-fname" data-i18n="lbl-fname">Prénom *</label>
+              <input class="form-input" id="f-fname" name="fname" type="text" placeholder="Jean" data-i18n-ph="ph-fname" required>
             </div>
             <div class="form-field">
-              <label class="form-label" for="f-lname">Nom</label>
-              <input class="form-input" id="f-lname" name="lname" type="text" placeholder="Dupont">
+              <label class="form-label" for="f-lname" data-i18n="lbl-lname">Nom</label>
+              <input class="form-input" id="f-lname" name="lname" type="text" placeholder="Dupont" data-i18n-ph="ph-lname">
             </div>
             <div class="form-field">
-              <label class="form-label" for="f-company">Entreprise</label>
-              <input class="form-input" id="f-company" name="company" type="text" placeholder="Nom de votre société">
+              <label class="form-label" for="f-company" data-i18n="lbl-company">Entreprise</label>
+              <input class="form-input" id="f-company" name="company" type="text" placeholder="Nom de votre société" data-i18n-ph="ph-company">
             </div>
             <div class="form-field">
-              <label class="form-label" for="f-email">Email *</label>
-              <input class="form-input" id="f-email" name="email" type="email" placeholder="jean@entreprise.fr" required>
+              <label class="form-label" for="f-email" data-i18n="lbl-email">Email *</label>
+              <input class="form-input" id="f-email" name="email" type="email" placeholder="jean@entreprise.fr" data-i18n-ph="ph-email" required>
             </div>
             <div class="form-field full">
-              <label class="form-label" for="f-service">Service concerné</label>
-              <select class="form-select" id="f-service" name="service">
-                <option value="">Sélectionnez un service...</option>
-                <option>Audit &amp; Conseil</option>
-                <option>Gestion d'Inventaire / DCIM</option>
-                <option>Confinement &amp; Installation de Baies</option>
-                <option>Urbanisation, Déploiement &amp; Câblage</option>
-                <option>Conduite de Projet Relocation</option>
-                <option>Support Opérationnel 24/7</option>
-                <option>Autre / Multiple</option>
+              <label class="form-label" for="f-service" data-i18n="lbl-service">Service concerné</label>
+              <select class="form-select" id="f-service" name="service" data-i18n-select="select-service">
+                <option value="" data-i18n-opt="opt-default">Sélectionnez un service...</option>
+                <option data-i18n-opt="opt-1">Audit &amp; Conseil</option>
+                <option data-i18n-opt="opt-2">Gestion d'Inventaire / DCIM</option>
+                <option data-i18n-opt="opt-3">Confinement &amp; Installation de Baies</option>
+                <option data-i18n-opt="opt-4">Urbanisation, Déploiement &amp; Câblage</option>
+                <option data-i18n-opt="opt-5">Conduite de Projet Relocation</option>
+                <option data-i18n-opt="opt-6">Support Opérationnel 24/7</option>
+                <option data-i18n-opt="opt-7">Autre / Multiple</option>
               </select>
             </div>
             <div class="form-field full">
-              <label class="form-label" for="f-msg">Décrivez votre projet *</label>
-              <textarea class="form-textarea" id="f-msg" name="message" placeholder="Parlez-nous de votre infrastructure, vos besoins et contraintes..." required></textarea>
+              <label class="form-label" for="f-msg" data-i18n="lbl-msg">Décrivez votre projet *</label>
+              <textarea class="form-textarea" id="f-msg" name="message" placeholder="Parlez-nous de votre infrastructure, vos besoins et contraintes..." data-i18n-ph="ph-msg" required></textarea>
             </div>
           </div>
           <button type="submit" class="form-submit">
-            Envoyer le Message
+            <span data-i18n="form-submit-btn">Envoyer le Message</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <p class="form-note">Réponse garantie sous 24h ouvrées · Vos données sont confidentielles</p>
+          <p class="form-note" data-i18n="form-note">Réponse garantie sous 24h ouvrées · Vos données sont confidentielles</p>
         </form>
       </div>
     </div>
@@ -1002,7 +1016,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
         <div class="footer-logo">
           <img src="assets/logo-white.png" alt="AFREN — Data Center Services">
         </div>
-        <p class="footer-tagline">La Qualité Notre Motivation. Votre partenaire de confiance pour le cycle de vie complet de votre Datacenter.</p>
+        <p class="footer-tagline" data-i18n="foot-tagline">La Qualité Notre Motivation. Votre partenaire de confiance pour le cycle de vie complet de votre Datacenter.</p>
         <div class="footer-social">
           <a href="mailto:contact@afren.co" class="footer-social-btn" title="Email">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1043,8 +1057,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 AFREN. Tous droits réservés.</span>
-      <span>Site réalisé par <a href="https://bewisee.com" target="_blank" rel="noopener">bewisee.com</a></span>
+      <span data-i18n="foot-copy">© 2025 AFREN. Tous droits réservés.</span>
+      <span data-i18n="foot-credit">Site réalisé par <a href="https://bewisee.com" target="_blank" rel="noopener">bewisee.com</a></span>
     </div>
   </div>
 </footer>
@@ -1053,8 +1067,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <div id="toast">
   <div id="toast-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
   <div>
-    <div style="font-size:14px;font-weight:700;margin-bottom:2px">Message envoyé !</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5)">Nous vous répondons sous 24h ouvrées.</div>
+    <div style="font-size:14px;font-weight:700;margin-bottom:2px" data-i18n="toast-title">Message envoyé !</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5)" data-i18n="toast-sub">Nous vous répondons sous 24h ouvrées.</div>
   </div>
 </div>
 
@@ -1075,9 +1089,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="smodal-icon" id="smodal-icon"></div>
       <h2 class="smodal-title" id="smodal-title"></h2>
       <p class="smodal-intro" id="smodal-intro"></p>
-      <p class="smodal-subtitle">Ce que nous faisons</p>
+      <p class="smodal-subtitle" data-i18n="smodal-subtitle">Ce que nous faisons</p>
       <ul class="smodal-features" id="smodal-features"></ul>
-      <a href="#contact" class="btn btn-primary" id="smodal-cta" style="width:100%;justify-content:center" onclick="document.getElementById('smodal-backdrop').classList.remove('open')">Discuter de ce Service →</a>
+      <a href="#contact" class="btn btn-primary" id="smodal-cta" style="width:100%;justify-content:center" onclick="document.getElementById('smodal-backdrop').classList.remove('open')" data-i18n="smodal-cta">Discuter de ce Service →</a>
     </div>
   </div>
 </div>
@@ -1185,6 +1199,112 @@ const counterObs = new IntersectionObserver(entries => {
 document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
 /* ── Service modals ── */
+/* ══════════════════════════════════════════════════
+   LANGUAGE SWITCHER
+══════════════════════════════════════════════════ */
+const en = {
+  'page-title':'AFREN — Datacenter Partner · Full Lifecycle',
+  'nav-services':'Our Services','nav-about':'About','nav-projects':'Projects','nav-gallery':'Gallery','nav-contact':'Contact','nav-cta-btn':'Contact Us',
+  'hero-badge':'Datacenter Expert · France',
+  'hero-h1':'Your Datacenter,<br><em>Our Expertise.</em><span class="line2">Full lifecycle management.</span>',
+  'hero-desc':'AFREN supports companies in the complete lifecycle management of their datacenter infrastructure — from strategic audit to 24/7 operational maintenance.',
+  'hero-btn1':'Start a Project','hero-btn2':'Our Services',
+  'hero-stat1-num':'15<span>+ yrs</span>','hero-stat1-lbl':'Combined experience',
+  'hero-stat2-num':'50<span>+</span>','hero-stat2-lbl':'Projects completed',
+  'hero-stat3-num':'24<span>/7</span>','hero-stat3-lbl':'Operational support',
+  'badge1-num':'99.9% SLA','badge1-lbl':'Guaranteed availability',
+  'badge2-num':'Under 4h','badge2-lbl':'On-site response',
+  'svc-label':'What We Do','svc-title':'Complete &amp; Certified<br><span>Datacenter Services</span>',
+  'svc-sub':'From strategic audit to operational maintenance, AFREN steps in at every stage of your datacenter infrastructure lifecycle.',
+  'svc-quote-btn':'Request a Quote →','svc-link':'Learn more',
+  's1-title':'Audit &amp; Consulting','s1-desc':'Comprehensive assessment of your datacenter processes, identification of optimization opportunities and action plans to ensure service continuity.',
+  's2-title':'Inventory Management','s2-desc':'Exhaustive cataloguing of equipment and cabling, through to DCIM tool implementation for full real-time visibility of your infrastructure.',
+  's3-title':'Containment &amp; Rack Installation','s3-desc':'Environmental optimization of your server room and PUE reduction. Manufacturer partnerships for certified and durable solutions.',
+  's4-title':'Urbanization, Deployment &amp; Cabling','s4-desc':'Equipment installation and identification, rigorous cable management with complete asset documentation for a fully controlled infrastructure.',
+  's5-title':'Relocation Project Management','s5-desc':'End-to-end management of complex IT equipment migrations, with methodological rigor guaranteeing zero data loss and minimal downtime.',
+  's6-title':'24/7 Operational Support','s6-desc':'Continuous operational management and rapid interventions per defined SLAs. Your infrastructure monitored and maintained at all times by our expert teams.',
+  'why-label':'Why AFREN','why-title':'Quality<br><span>Our Motivation</span>',
+  'why-sub':'We combine technical expertise, innovation and quality commitment to deliver datacenter projects that exceed your expectations. Our passion for IT infrastructure is our greatest asset.',
+  'why-badge-text':'Certified AFREN Team','why-badge-sub':'15+ years experience · 24/7 response',
+  'why1-title':'Deep Technical Expertise','why1-text':'15+ years of combined experience on complex datacenter projects for major French enterprises.',
+  'why2-title':'Responsiveness &amp; Flexibility','why2-text':'Ability to quickly adapt to operational constraints and the most sensitive production environments.',
+  'why3-title':'Results-Driven &amp; Safety-First','why3-text':'Every intervention is meticulously planned. Installation safety and service continuity are our absolute priority.',
+  'proc-label':'How It Works','proc-title':'Start Your Project<br><span>in 3 Steps</span>',
+  'proc1-title':'Analysis &amp; Assessment','proc1-desc':'We evaluate your current infrastructure, identify your needs and jointly define the objectives of your datacenter project.',
+  'proc2-title':'Custom Action Plan','proc2-desc':'Our experts design a detailed intervention plan, tailored to your technical, operational and budget constraints.',
+  'proc3-title':'Execution &amp; Monitoring','proc3-desc':'Project delivery with rigorous follow-up, regular reporting and quality assurance at every stage through to final handover.',
+  'proj-label':'Our Projects','proj-title':'Large-Scale Projects<br><span style="color:var(--cyan)">Successfully Delivered</span>',
+  'proj-sub':'AFREN has led major datacenter projects for demanding clients, with recognized execution rigor and quality.',
+  'proj-stat1-lbl':'Containment installed in<br>live production environment',
+  'proj-stat2-lbl':'Equipment units relocated<br>across three sites simultaneously',
+  'proj-stat3-lbl':'Cable points<br>restructured in a single project',
+  'proj1-title':'Cold/Hot Aisle Containment — 1,000+ m²','proj1-desc':'Full installation of an aisle containment system in a live datacenter with zero service interruption. PUE reduced from 1.8 to 1.3.',
+  'proj2-title':'Multi-Site Relocation — 1,500+ Units','proj2-desc':'Complex migration of critical IT equipment across three geographical sites, with logistical coordination and zero major incident.',
+  'proj3-title':'Cabling Restructure — 60,000+ Points','proj3-desc':'Complete copper and fiber cabling overhaul for a major regional datacenter: labelling, documentation and full DCIM integration.',
+  'proj4-title':'DCIM Deployment &amp; Full Inventory','proj4-desc':'DCIM tool implementation with exhaustive inventory of 5,000+ active and passive devices, integrated into the client's monitoring system.',
+  'who-label':'Industries','who-title':'Sectors We Serve','who-sub':'AFREN operates in critical environments with high availability requirements.',
+  'gal-label':'Our Work','gal-title':'Projects<br><span>in Pictures</span>','gal-sub':'Authentic photos from our field interventions — from containment installation to full deployment.',
+  'gf-all':'View All','gf-dc':'Datacenters','gf-conf':'Containment','gf-cab':'Cabling','gf-team':'Our Team','gf-relo':'Relocation',
+  'part-label':'Partners &amp; Clients','part-title':'They Trust Us',
+  'cta-title':'Ready to Optimize<br>Your <span>Datacenter</span>?','cta-sub':'Let\'s discuss your project. Our team of experts is available to analyse your needs and propose solutions tailored to your infrastructure.',
+  'cta-btn':'Start a Project',
+  'contact-title':'Let\'s Talk About<br><span>Your Project</span>','contact-sub':'Whether for an audit, deployment or operational support, our team is ready to address your datacenter needs with responsiveness and expertise.',
+  'form-title':'Send Us a Message','form-sub':'Describe your project and we\'ll get back to you quickly.',
+  'lbl-fname':'First Name *','lbl-lname':'Last Name','lbl-company':'Company','lbl-email':'Email *','lbl-service':'Service needed','lbl-msg':'Describe your project *',
+  'ph-fname':'John','ph-lname':'Smith','ph-company':'Your company name','ph-email':'john@company.com','ph-msg':'Tell us about your infrastructure, needs and constraints...',
+  'opt-default':'Select a service...','opt-1':'Audit &amp; Consulting','opt-2':'Inventory Management / DCIM','opt-3':'Containment &amp; Rack Installation','opt-4':'Urbanization, Deployment &amp; Cabling','opt-5':'Relocation Project Management','opt-6':'24/7 Operational Support','opt-7':'Other / Multiple',
+  'form-submit-btn':'Send Message','form-note':'Response guaranteed within 24 business hours · Your data is confidential',
+  'foot-tagline':'Quality Our Motivation. Your trusted partner for the complete lifecycle management of your Datacenter.',
+  'foot-copy':'© 2025 AFREN. All rights reserved.',
+  'foot-credit':'Website by <a href="https://bewisee.com" target="_blank" rel="noopener">bewisee.com</a>',
+  'toast-title':'Message sent!','toast-sub':'We\'ll reply within 24 business hours.',
+  'smodal-subtitle':'What\'s included','smodal-cta':'Discuss this Service →'
+};
+
+let fr = {};
+let currentLang = localStorage.getItem('afren-lang') || 'fr';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('afren-lang', lang);
+  document.documentElement.lang = lang;
+  if (lang === 'en') document.title = en['page-title'];
+  else document.title = fr['page-title'] || 'AFREN — Partenaire Datacenter · Cycle de Vie Complet';
+
+  const dict = lang === 'en' ? en : fr;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.dataset.i18n;
+    if (dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.dataset.i18nPh;
+    if (dict[k] !== undefined) el.placeholder = dict[k];
+  });
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+    const k = el.dataset.i18nOpt;
+    if (dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+/* ── Capture French defaults (runs after DOM is ready) ── */
+document.addEventListener('DOMContentLoaded', () => {
+  fr['page-title'] = document.title;
+  document.querySelectorAll('[data-i18n]').forEach(el => { fr[el.dataset.i18n] = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { fr[el.dataset.i18nPh] = el.placeholder; });
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => { fr[el.dataset.i18nOpt] = el.innerHTML; });
+  if (currentLang === 'en') applyLang('en');
+  else document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === 'fr'));
+});
+
+/* ══════════════════════════════════════════════════
+   SERVICE DATA (bilingual)
+══════════════════════════════════════════════════ */
 const serviceData = {
   audit: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg>`,
@@ -1199,7 +1319,21 @@ const serviceData = {
       'Préconisations techniques et budgétaires',
       'Plan de continuité d\'activité (PCA/PRA)',
       'Accompagnement dans la mise en œuvre des recommandations'
-    ]
+    ],
+    en: {
+      title: 'Datacenter Audit & Consulting',
+      intro: "A complete and objective analysis of your datacenter infrastructure to identify risks, optimise processes and guarantee service continuity. Our experts guide you in defining a strategy tailored to your challenges.",
+      features: [
+        'Full audit of physical and logical infrastructure',
+        'Risk assessment and single-point-of-failure analysis',
+        'Energy performance analysis (PUE)',
+        'Infrastructure mapping and documentation',
+        'Identification of priority improvement areas',
+        'Technical and budgetary recommendations',
+        'Business continuity / disaster recovery planning (BCP/DRP)',
+        'Support in implementing recommendations'
+      ]
+    }
   },
   inventory: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 12l2 2 4-4"/></svg>`,
@@ -1214,7 +1348,21 @@ const serviceData = {
       'Intégration avec les outils de supervision existants',
       'Formation des équipes à l\'utilisation du DCIM',
       'Suivi et mise à jour de la base de données d\'inventaire'
-    ]
+    ],
+    en: {
+      title: 'Inventory Management & DCIM',
+      intro: "From exhaustive equipment cataloguing to advanced DCIM tool implementation, AFREN gives you complete, real-time visibility of your datacenter infrastructure for optimised management.",
+      features: [
+        'Full inventory of active and passive equipment',
+        'Cabling catalogue (copper, fiber, patch leads)',
+        'Standardised labelling and tagging',
+        'Comprehensive technical documentation (diagrams, floor plans)',
+        'DCIM tool selection and deployment',
+        'Integration with existing monitoring tools',
+        'Team training on DCIM usage',
+        'Ongoing inventory database maintenance and updates'
+      ]
+    }
   },
   confinement: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M2 7h20M2 11h20"/></svg>`,
@@ -1229,7 +1377,21 @@ const serviceData = {
       'Mise en place de bouchons d\'obturation et d\'entrées de câbles',
       'Mesure et validation du PUE avant/après',
       'Intervention en environnement de production (zéro downtime)'
-    ]
+    ],
+    en: {
+      title: 'Containment & Rack Installation',
+      intro: "Thermal environment optimisation for your server room through cold and hot aisle containment solutions. Significant PUE reduction in partnership with major manufacturers.",
+      features: [
+        'Preliminary thermal study of the room',
+        'Containment system design and sizing',
+        'Cold or hot aisle containment installation',
+        'Raised floor integration',
+        'Rack installation and cabling',
+        'Blanking panels and cable entry management',
+        'PUE measurement and validation before/after',
+        'Live production environment intervention (zero downtime)'
+      ]
+    }
   },
   cabling: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>`,
@@ -1244,7 +1406,21 @@ const serviceData = {
       'Documentation des connexions (Patch Panel, ports actifs)',
       'Tests et certification des liens (Fluke)',
       'Remise d\'un DOE (Dossier des Ouvrages Exécutés) complet'
-    ]
+    ],
+    en: {
+      title: 'Urbanization, Deployment & Cabling',
+      intro: "Rigorous IT equipment installation with professional structured cabling management. Complete asset documentation for a fully controlled and scalable infrastructure.",
+      features: [
+        'Server room planning and space management',
+        'Physical equipment installation (racks, servers, switches)',
+        'Copper structured cabling (Cat6, Cat6A) and fiber optic',
+        'Cable routing and management (trays, raceways)',
+        'Identification and labelling of every cable',
+        'Connection documentation (Patch Panel, active ports)',
+        'Link testing and certification (Fluke)',
+        'Full as-built documentation (DOE) handover'
+      ]
+    }
   },
   relocation: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/><path d="M3 19V5"/></svg>`,
@@ -1259,7 +1435,21 @@ const serviceData = {
       'Reinstallation et recâblage sur le site cible',
       'Tests de remise en service et validation fonctionnelle',
       'Rapport de fin de migration avec lessons learned'
-    ]
+    ],
+    en: {
+      title: 'Relocation Project Management',
+      intro: "Complex IT equipment and server room migration using a proven methodology. AFREN manages every step to guarantee zero data loss, minimal downtime and on-time delivery.",
+      features: [
+        'Pre-audit of source and destination sites',
+        'Detailed project planning (schedule, resources, risks)',
+        'Coordination with IT teams and contractors',
+        'Equipment unpacking, packing and conditioning',
+        'Secure transport with full traceability',
+        'Reinstallation and re-cabling at the target site',
+        'Recommissioning tests and functional validation',
+        'End-of-migration report with lessons learned'
+      ]
+    }
   },
   support: {
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>`,
@@ -1274,15 +1464,30 @@ const serviceData = {
       'Remplacement de composants défaillants (spare parts)',
       'Reporting mensuel et suivi des KPIs',
       'Coordination avec les constructeurs et infogérants'
-    ]
+    ],
+    en: {
+      title: '24/7 Operational Support',
+      intro: "Day-to-day operational management of your datacenter with rapid interventions per defined SLAs. Our teams ensure continuous monitoring and preventive maintenance of your infrastructure.",
+      features: [
+        '24/7 on-call phone support',
+        'On-site response within 4 hours per SLA',
+        'Proactive systems monitoring (temperature, power, network)',
+        'Scheduled preventive maintenance',
+        'Incident management and escalation',
+        'Failed component replacement (spare parts)',
+        'Monthly reporting and KPI tracking',
+        'Coordination with manufacturers and managed service providers'
+      ]
+    }
   }
 };
 
 document.querySelectorAll('.service-card[data-modal]').forEach(card => {
   card.addEventListener('click', () => {
     const key = card.dataset.modal;
-    const data = serviceData[key];
-    if (!data) return;
+    const sd = serviceData[key];
+    if (!sd) return;
+    const data = (currentLang === 'en' && sd.en) ? { ...sd, ...sd.en } : sd;
     document.getElementById('smodal-icon').innerHTML = data.icon;
     document.getElementById('smodal-title').textContent = data.title;
     document.getElementById('smodal-intro').textContent = data.intro;
